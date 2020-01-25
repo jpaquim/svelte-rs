@@ -1,0 +1,42 @@
+{
+  "name": "rollup-plugin-svelte-rs",
+  "version": "0.1.0",
+  "description": "Compile Svelte-rs components with Rollup",
+  "main": "index.js",
+  "files": [
+    "index.js",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "test": "mocha",
+    "lint": "eslint index.js",
+    "prepublishOnly": "npm run lint && npm test"
+  },
+  "repository": "jpaquim/svelte-rs",
+  "keywords": [
+    "rollup",
+    "rust",
+    "svelte",
+    "svelte-rs"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^5.10.0",
+    "locate-character": "^2.0.5",
+    "mocha": "^5.2.0",
+    "rollup": "^0.67.4",
+    "sander": "^0.6.0",
+    "source-map": "^0.6.1",
+    "svelte": "^3.0.0-beta.5"
+  },
+  "dependencies": {
+    "require-relative": "^0.8.7",
+    "rollup-pluginutils": "^2.3.3",
+    "sourcemap-codec": "^1.4.4"
+  },
+  "peerDependencies": {
+    "svelte": "*",
+    "rollup": ">=0.60.0"
+  }
+}

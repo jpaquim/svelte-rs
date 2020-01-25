@@ -1,10 +1,18 @@
-use svelte_rs::*;
 use std::env;
+use std::process;
+
+mod lib;
+
+use lib::Config;
 
 fn main() {
-    let a = 2;
-    let b = 2;
-    println!("{} + {} = {}", a, b, add(a, b));
     let args: Vec<String> = env::args().collect();
-    println!("{:?}", args);
+    let config = Config::new(&args).unwrap_or_else(|err| {
+        println!("Problem parsing arguments: {}", err);
+        process::exit(1);
+    });
+    if let Err(e) = lib::run(config) {
+        println!("Application error: {}", e);
+        process::exit(1);
+    }
 }

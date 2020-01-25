@@ -2,6 +2,8 @@
 
 members = [
   "cli",
+  "compiler",
   "core",
+  "parser",
   "runtime",
 ]
